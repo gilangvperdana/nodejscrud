@@ -33,7 +33,7 @@
 <body>
 
 <div class="container">
-  <h2>Please Edit your Data!</h2>
+  <h2><p style="text-align: center;">Edit Your Data!</p></h2>
   <form action="/update" method="post">
     <input type="hidden" value="<%= user.id %>" name="id">
     <div class="form-group">
@@ -48,8 +48,8 @@
       <label for="phone">Phone No:</label>
       <input type="text" class="form-control" id="pwd" placeholder="Enter Phone No" value="<%= user.phone_no %>" name="phone_no" required>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <a href="/" class="btn btn-secondary">Back</a><br/><br/>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+    <a href="/" class="btn btn-secondary btn-lg btn-block">Back</a><br/><br/>
   </form>
 </div>
 
