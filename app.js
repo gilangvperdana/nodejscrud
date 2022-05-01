@@ -51,7 +51,7 @@ app.post('/save',(req, res) => {
     let sql = "INSERT INTO users SET ?";
     let query = connection.query(sql, data,(err, results) => {
       if(err) throw err;
-      res.redirect('/');
+      res.redirect('./');
     });
 });
 
@@ -73,7 +73,7 @@ app.post('/update',(req, res) => {
     let sql = "update users SET name='"+req.body.name+"',  email='"+req.body.email+"',  phone_no='"+req.body.phone_no+"' where id ="+userId;
     let query = connection.query(sql,(err, results) => {
       if(err) throw err;
-      res.redirect('/');
+      res.redirect('./');
     });
 });
 
@@ -83,7 +83,7 @@ app.get('/delete/:userId',(req, res) => {
     let sql = `DELETE from users where id = ${userId}`;
     let query = connection.query(sql,(err, result) => {
         if(err) throw err;
-        res.redirect('/');
+        res.redirect('./');
     });
 });
 
