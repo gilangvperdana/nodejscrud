@@ -83,7 +83,7 @@ app.get('/delete/:userId',(req, res) => {
     let sql = `DELETE from users where id = ${userId}`;
     let query = connection.query(sql,(err, result) => {
         if(err) throw err;
-        res.redirect('./');
+        res.redirect('../');
     });
 });
 
