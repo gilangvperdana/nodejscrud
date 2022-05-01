@@ -6,9 +6,9 @@ const mysql = require('mysql');
 const app = express();
 
 const connection=mysql.createConnection({
-    host:'localhost',
+    host:'database', //declare the host with the same name of Database service on docker-compose.yml
     user:'root',
-    password:'',
+    password:'root',
     database:'node_crud'
 });
 

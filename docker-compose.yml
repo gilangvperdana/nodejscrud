@@ -1,0 +1,36 @@
+version: '3'
+services:
+
+  nodecrud:
+    image: gilangvperdana/apps:nodecrud1
+    networks:
+      sql_net:
+    ports:
+      - 3000:3000
+
+  database:
+    image: mysql:5.7
+    networks:
+      sql_net:
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "node_crud"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "root"
+
+  phpmyadmin:
+    depends_on:
+      - database
+    environment:
+      PMA_HOST: "database"
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8282:80
+    networks:
+      sql_net:
+
+networks:
+  sql_net:
