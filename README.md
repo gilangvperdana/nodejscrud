@@ -70,24 +70,6 @@ Setp 7 : Run a server and check with Browser
 			
 Step 8 : Get value from database and show in HTML table using ExpressJS / MySQL
 
-## Start
+# Start
 - npm install
 - npm start
-
-## Dockerize
-- Clone this repository
-- UP docker-compose, with :
-```
-cd nodejscrud
-docker-compose up -d
-```
-- Move node_crud.sql to mysql Container, with :
-```
-cd nodejscrud
-docker cp mysql_container_id:/root/
-docker exec -it mysql_container_id bash
-cd /root/
-mysql -u root -p root node_crud < node_crud.sql
-exit
-```
-- Access on `localhost:3000`
